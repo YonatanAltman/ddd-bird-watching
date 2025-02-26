@@ -6,7 +6,7 @@ import { BwLibGeneratorSchema } from './schema';
 
 describe('bw-lib generator', () => {
   let tree: Tree;
-  const options: BwLibGeneratorSchema = { name: 'test' };
+  const options: BwLibGeneratorSchema = { name: 'test',type:'ui',domain:'a' };
 
   beforeEach(() => {
     tree = createTreeWithEmptyWorkspace();
