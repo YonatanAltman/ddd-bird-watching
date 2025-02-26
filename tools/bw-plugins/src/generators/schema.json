@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "BwLib",
+  "title": "BwLib Schema",
+  "type": "object",
+  "properties": {
+    "domain": {
+      "type": "string",
+      "description": "The domain of the library (e.g., risk, shared, auth).",
+      "x-prompt": "What is the domain of the library?"
+    },
+    "name": {
+      "type": "string",
+      "description": "The name of the library (e.g., risk-table, auth-service).",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use for the library?"
+    },
+    "type": {
+      "type": "string",
+      "description": "Type of the library (feature, core, ui, or data-access).",
+      "enum": [
+        "feature",
+        "core",
+        "ui",
+        "data-access"
+      ],
+      "x-prompt": "What type of library is this? (feature, core, ui, data-access)"
+    }
+  },
+  "required": [
+    "domain",
+    "name",
+    "type"
+  ]
+}

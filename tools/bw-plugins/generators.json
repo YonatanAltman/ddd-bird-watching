@@ -1,0 +1,14 @@
+{
+  "generators": {
+    "be-lib": {
+      "factory": "./src/generators/be-lib",
+      "schema": "./src/generators/schema.json",
+      "description": "be-lib generator"
+    },
+    "bw-lib": {
+      "factory": "./src/generators/bw-lib",
+      "schema": "./src/generators/schema.json",
+      "description": "bw-lib generator"
+    }
+  }
+}
