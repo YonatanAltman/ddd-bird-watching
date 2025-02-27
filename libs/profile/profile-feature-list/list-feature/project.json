@@ -1,0 +1,20 @@
+{
+  "name": "profile-feature-list",
+  "$schema": "../../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/profile/profile-feature-list/list-feature/src",
+  "prefix": "profile-feature-list",
+  "projectType": "library",
+  "tags": ["feature"],
+  "targets": {
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/profile/profile-feature-list/list-feature/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

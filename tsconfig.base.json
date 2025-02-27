@@ -16,16 +16,23 @@
     "baseUrl": ".",
     "paths": {
       "@bird-watching/bw-plugins": ["tools/bw-plugins/src/index.ts"],
-      "@bw/layout/navbar-ui": [
-        "libs/layout/layout-ui-navbar/navbar-ui/src/index.ts"
+      "@bw/auth/user-data-access": [
+        "libs/auth/auth-data-access-user/user-data-access/src/index.ts"
       ],
-      "@bw/layout/sidebar-ui": [
-        "libs/layout/layout-ui-sidebar/sidebar-ui/src/index.ts"
+      "@bw/dashboard/main-feature": [
+        "libs/dashboard/dashboard-feature-main/main-feature/src/index.ts"
       ],
-      "@bw/layout/user-feature": [
-        "libs/layout/layout-feature-user/user-feature/src/index.ts"
+      "@bw/layout/list-ui": ["libs/layout/layout-ui-list/list-ui/src/index.ts"],
+      "@bw/main-feature": ["libs/dashboard/src/index.ts"],
+      "@bw/profile/image-ui": [
+        "libs/profile/profile-ui-image/image-ui/src/index.ts"
       ],
-      "@bw/main-feature": ["libs/dashboard/src/index.ts"]
+      "@bw/profile/list-feature": [
+        "libs/profile/profile-feature-list/list-feature/src/index.ts"
+      ],
+      "@bw/profile/page-feature": [
+        "libs/profile/profile-feature-page/page-feature/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]
