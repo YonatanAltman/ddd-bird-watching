@@ -34,45 +34,28 @@ export async function bwLibGenerator(
   }
 
   // Construct Path and Name
-  const projectRoot = `libs/${options.domain}/${options.name}-${options.type}`;
-  const projectName = `${options.domain}-${options.name}-${options.type}`;
-  const importPath = `@bw/${options.name}-${options.type}`;
+  const preFixName =`${names(options.domain).fileName}-${options.type}-${names(options.name).fileName}`;
+  const projectDirectory = `${options.domain}/${preFixName}/${options.name}-${options.type}`;
+  const projectRoot = `libs/${projectDirectory}`;
+  const importPath = `@bw/${names(options.domain).fileName}/${options.name}-${options.type}`;
+
+  // Check if the directory already exists
+  if (tree.exists(projectRoot)) {
+    throw new Error(`The directory ${projectRoot} already exists. Choose a different name.`);
+  }
 
   // Generate Angular Library using Nx's Angular Library Generator
   await libraryGenerator(tree, {
-    name: options.name,
+    name: preFixName,
     directory: projectRoot,
     tags: `${options.type}`,
     style: 'scss',
     standaloneConfig: true,
+    commonModule:false,
     changeDetection: 'OnPush',
     importPath: importPath,
-    prefix: names(options.name).propertyName
+    prefix: preFixName,
   });
-
-  // Adjust Configuration
-  addProjectConfiguration(tree, projectName, {
-    root: projectRoot,
-    projectType: 'library',
-    sourceRoot: `${projectRoot}/src`,
-    targets: {
-      build: {
-        executor: '@angular-devkit/build-angular:ng-packagr',
-        outputs: [`{options.outputPath}`],
-        options: {
-          tsConfig: `${projectRoot}/tsconfig.lib.json`,
-          project: `${projectRoot}/ng-package.json`
-        }
-      }
-    },
-    tags: [options.type]
-  });
-
-  // Generate Additional Files
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, options);
-
-  // Format Files
-  await formatFiles(tree);
 
   logger.info(`Angular library created at: ${projectRoot}`);
   logger.info(`Import path: ${importPath}`);

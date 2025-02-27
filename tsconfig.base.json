@@ -15,7 +15,11 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@bird-watching/bw-plugins": ["tools/bw-plugins/src/index.ts"]
+      "@bird-watching/bw-plugins": ["tools/bw-plugins/src/index.ts"],
+      "@bw/layout/sidebar-ui": [
+        "libs/layout/layout-ui-sidebar/sidebar-ui/src/index.ts"
+      ],
+      "@bw/main-feature": ["libs/dashboard/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
