@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { User } from '@bw/auth/user-data-access';
+import { ListItem } from '@bw/shared/list-data-access';
 
 @Component({
   selector: 'profile-ui-image-profile-ui-image',
@@ -10,5 +11,6 @@ import { User } from '@bw/auth/user-data-access';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileUiImageComponent {
-  user:User
+  // user:User;
+  list:ListItem[] = [];
 }

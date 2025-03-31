@@ -19,6 +19,12 @@
       "@bw/auth/user-data-access": [
         "libs/auth/auth-data-access-user/user-data-access/src/index.ts"
       ],
+      "@bw/controls/control-data-access": [
+        "libs/controls/controls-data-access-control/control-data-access/src/index.ts"
+      ],
+      "@bw/controls/list-feature": [
+        "libs/controls/controls-feature-list/list-feature/src/index.ts"
+      ],
       "@bw/dashboard/main-feature": [
         "libs/dashboard/dashboard-feature-main/main-feature/src/index.ts"
       ],
@@ -32,6 +38,18 @@
       ],
       "@bw/profile/page-feature": [
         "libs/profile/profile-feature-page/page-feature/src/index.ts"
+      ],
+      "@bw/shared/button-ui": [
+        "libs/shared/shared-ui-button/button-ui/src/index.ts"
+      ],
+      "@bw/shared/input-ui": [
+        "libs/shared/shared-ui-input/input-ui/src/index.ts"
+      ],
+      "@bw/shared/list-data-access": [
+        "libs/shared/shared-data-access-list/list-data-access/src/index.ts"
+      ],
+      "@bw/uber/table-feature": [
+        "libs/uber/uber-feature-table/table-feature/src/index.ts"
       ]
     }
   },
